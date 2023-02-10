@@ -1,7 +1,7 @@
 const firstText = document.querySelector("#firstText");
 const lastText = document.querySelector("#lastText");
 const submitBtn = document.querySelector("#submitBtn");
-const cookieBtn = document.querySelector("#cookiesBtn");
+const cookieBtn = document.querySelector("#cookieBtn");
 
 submitBtn.addEventListener("click", () => {
     setCookie("firstName", firstText.value, 365);
