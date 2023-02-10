@@ -1,17 +1,17 @@
-const firstText = document.querySelector("#firstText")
-const lastText = document.querySelector("#lastText")
-const submitBtn = document.querySelector("#submitBtn")
-const cookiesBtn = document.querySelector("#cookiesBtn")
+const firstText = document.querySelector("#firstText");
+const lastText = document.querySelector("#lastText");
+const submitBtn = document.querySelector("#submitBtn");
+const cookieBtn = document.querySelector("#cookiesBtn");
 
 submitBtn.addEventListener("click", () => {
-    setCookie("firstName", firstTe)
-})
+    setCookie("firstName", firstText.value, 365);
+    setCookie("lastName", lastText.value, 365);
+});
 
-setCookie("firstName", "Nikola", 365);
-setCookie("lastName", "Petrasinovic", 365)
-
-console.log(getCookie("firstName"));
-console.log(getCookie("lastName"));
+cookieBtn.addEventListener("click", () => {
+    firstText.value = getCookie("firstName");
+    lastText.value = getCookie("lastName");
+});
 
 function setCookie(name, value, daysToLive){
     const date = new Date();
