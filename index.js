@@ -1,7 +1,7 @@
 const firstText = document.querySelector("#firstText");
 const lastText = document.querySelector("#lastText");
 const submitBtn = document.querySelector("#submitBtn");
-const cookieBtn = document.querySelector("#cookiesBtn");
+const cookieBtn = document.querySelector("#cookieBtn");
 
 submitBtn.addEventListener("click", () => {
     setCookie("firstName", firstText.value, 365);
@@ -17,7 +17,7 @@ function setCookie(name, value, daysToLive){
     const date = new Date();
     date.setTime(date.getTime() + daysToLive * 24 * 60 * 60 * 1000);
     let expires = "expires=" + date.toUTCString();
-    document.cookie = `${name}=${value};$(expires); path=/`
+    document.cookie = `${name}=${value};${expires}; path=/`
 }
 
 function deleteCookie(name){
@@ -27,7 +27,7 @@ function deleteCookie(name){
 function getCookie(name){
     const cDecoded = decodeURIComponent(document.cookie);
     const cArray = cDecoded.split("; ");
-    let result = 0;
+    let result = null;
 
     cArray.forEach(element => {
         if(element.indexOf(name) == 0){
